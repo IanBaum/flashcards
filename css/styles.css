@@ -1,0 +1,26 @@
+body{
+  background-color: #999;
+  text-align: center;
+
+}
+
+
+#card{
+  background-color: white;
+  color:#333;
+  font-size: 2em;
+  border-radius: 3%;
+  height: 500px;
+}
+
+#cardTitle{
+  font-size: 2em;
+}
+
+#cardDef{
+  display: none;
+  padding:15px;
+}
+
+.cardBtn{
+}
