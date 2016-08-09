@@ -1,6 +1,7 @@
 jQuery(document).ready(function(){
 
   var currentTitleIndex = 0;
+  var cardState = 0; // 0 is front
 
   var titles = ["JavaScript", "Operators", "Variables", "Variable Naming Conventions", "Functions", "Methods", "Arguments", "Parameters", "Return", "Chaining Methods", "Strings", "Booleans", "Undefined", "NaN", "Escape", "Alert", "Comments", "jQuery", "Attributes"];
 
@@ -13,6 +14,23 @@ jQuery(document).ready(function(){
   $("#card").click(function(){
     $("#cardTitle").toggle();
     $("#cardDef").toggle();
+
+    var userHeight = $(".chatUser").height();
+    var chatHeight = $("#chatBox").height();
+
+    if (!cardState) {
+      $(".chatUser").prepend("<li>" + titles[currentTitleIndex] + "</li>")
+
+      cardState = 1;
+    }
+    else {
+      cardState = 0;
+    }
+
+    if (userHeight >= (chatHeight/2)) {
+      $(".chatUser").children("li").last().remove();
+    }
+
   });
 
   $(".prev").click(function(){
@@ -28,6 +46,12 @@ jQuery(document).ready(function(){
       currentTitleIndex++;
       $("#cardTitle").text(titles[currentTitleIndex]);
       $(".currentIndex").text((currentTitleIndex + 1));
+
+      if (cardState) {
+        cardState = 0;
+        $("#cardTitle").toggle();
+        $("#cardDef").toggle();
+      }
     }
   });
 

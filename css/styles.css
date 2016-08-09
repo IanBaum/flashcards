@@ -5,7 +5,7 @@ body{
 }
 
 
-#card{
+#card, #chatBox{
   background-color: white;
   color:#333;
   font-size: 2em;
@@ -22,5 +22,15 @@ body{
   padding:15px;
 }
 
-.cardBtn{
+
+.chat {
+  list-style: none;
+}
+
+.chatUser {
+  text-align: left;
+}
+
+.chatBot {
+  text-align: right;
 }
