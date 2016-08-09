@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
     $("#cardDef").toggle();
 
     var userHeight = $(".chatUser").height();
-    var chatHeight = $("#chatBox").height();
+    var chatHeight = $("#chatBox").height() - 100;
 
     if (!cardState) {
       $(".chatUser").prepend("<li>" + titles[currentTitleIndex] + "</li>")
@@ -27,7 +27,7 @@ jQuery(document).ready(function(){
       cardState = 0;
     }
 
-    if (userHeight >= (chatHeight/2)) {
+    if (userHeight >= (chatHeight)) {
       $(".chatUser").children("li").last().remove();
     }
 
